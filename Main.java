@@ -4,22 +4,73 @@ class Main{
     }
 }
 class Node{
-    Node next;
-    Node prev;
+    Node right;
+    Node left;
     int data;
 
     Node(){
-        next = null;
-        prev = null;
+        right = null;
+        left = null;
         data = 0;
     }
     Node(int value){
-        next = null;
-        prev = null;
+        right = null;
+        left = null;
         data = value;
     }
 }
-class Tree{
+class BinarySearchTree{
     Node root;
-    
+    public boolean insertNode(int v){
+        Node nNode=new Node(v);
+        root=recursiveInsertNode(root,nNode);
+        return true;
+        }
+        
+        private Node recursiveInsertNode(Node node, Node nNode ){
+            if(node == null)
+                node = nNode;
+            else if (nNode.data <node.data){
+                node.left = recursiveInsertNode(node.left, nNode);
+            }
+            else if (nNode.data <node.data){
+                node.right = recursiveInsertNode(node.right, nNode);
+            }  
+            return node;
+        }
+               
+        
+        Node search(int v){
+        return recursiveSearch(root,v);
+        }
+        
+        private Node recursiveSearch(Node node, int v){
+
+
+
+        return null;
+        }
+        
+        
+        void DFS(Node node){
+        //complete iterative method
+        }
+        
+        void BFS(Node node){
+        //write iterative method
+        }
+        
+        void DFS_inorder(Node node){
+        //complete the recursive code
+        }
+        
+        void DFS_preorder(Node node){
+        //complete the recursive code
+        }
+        
+        void DFS_postorder(Node node){
+        //complete the recursive code
+        }
+
+
 }
